@@ -9,6 +9,4 @@ class Song < ActiveRecord::Base
     artist = Artist.find_or_create_by(name: name)
     self.artist = artist
   end
-
-  
 end
