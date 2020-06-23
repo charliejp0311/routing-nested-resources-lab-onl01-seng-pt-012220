@@ -5,7 +5,7 @@ class SongsController < ApplicationController
         @artist = Artist.find(params[:artist_id])
         @songs = @artist.songs
       else
-        flash[:alert] = "Artist not found"
+        flash[:alert] = "Atrist not found"
         redirect_to artists_path
       end
     else
@@ -49,7 +49,6 @@ class SongsController < ApplicationController
   def edit
     @song = Song.find(params[:id])
   end
-
     def update
       @song = Song.find(params[:id])
   
@@ -75,6 +74,7 @@ class SongsController < ApplicationController
       params.require(:song).permit(:title, :artist_name)
     end
   end
+    @song = Song.new(song_params)
 
 
 
